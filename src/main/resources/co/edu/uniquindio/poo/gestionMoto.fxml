@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_gestionMoto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="988.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.GestionMotoViewController">
+   <children>
+      <SubScene height="332.0" layoutX="26.0" layoutY="419.0" width="937.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene height="393.0" layoutX="26.0" layoutY="12.0" width="937.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text id="lbl_empresa" fx:id="txt_tucarro" fill="#ffc300" layoutX="384.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUCARRO.COM" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_gestionVh" fill="#566573" layoutX="25.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Motos" textAlignment="CENTER" wrappingWidth="309.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button id="btn_volver" fx:id="btn_volver" layoutX="79.0" layoutY="689.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text id="lbl_reserva" fx:id="txt_vehiculos" fill="#ffc300" layoutX="43.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motos" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_carro" fitHeight="300.0" fitWidth="336.0" layoutX="656.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TableView id="tb_listVehiculos" fx:id="tb_listMotos" layoutX="79.0" layoutY="472.0" prefHeight="200.0" prefWidth="830.0">
+         <columns>
+            <TableColumn id="tbc_tipoVh" fx:id="tbc_tipo" prefWidth="109.0" text="Tipo" />
+            <TableColumn id="tbc_cedulaCl" fx:id="tbc_modelo" prefWidth="117.0" text="Modelo" />
+            <TableColumn id="tbc_nombreCl" fx:id="tbc_marca" prefWidth="107.0" text="Marca" />
+            <TableColumn id="tbc_telefonoCl" fx:id="tbc_matricula" prefWidth="114.0" text="Matricula" />
+            <TableColumn id="tbc_correoCl" fx:id="tbc_añoFabricacion" prefWidth="159.0" text="Año Fabricacion" />
+            <TableColumn id="tbc_reservasCl" fx:id="tbc_disponible" prefWidth="108.0" text="Disponible" />
+            <TableColumn fx:id="tbc_caja" prefWidth="115.0" text="Caja" />
+         </columns>
+      </TableView>
+      <Text fx:id="txt_marca" layoutX="33.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <TextField id="lbl_marcaVh" fx:id="txf_marca" layoutX="82.0" layoutY="205.0" prefHeight="38.0" prefWidth="275.0" />
+      <TextField id="lbl_modeloVh" fx:id="txf_modelo" layoutX="82.0" layoutY="128.0" prefHeight="38.0" prefWidth="275.0" />
+      <Text fx:id="txt_modelo" layoutX="37.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_matricula" layoutX="47.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <TextField id="lbl_matriculaVh" fx:id="txf_matricula" layoutX="82.0" layoutY="280.0" prefHeight="38.0" prefWidth="275.0" />
+      <TextField id="lbl_añoFabricacionVh" fx:id="txf_añoFabricacion" layoutX="82.0" layoutY="354.0" prefHeight="38.0" prefWidth="275.0" />
+      <Text fx:id="txt_añoFabricacion" layoutX="78.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Año fabricacion" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Button id="btn_actualizarVh" fx:id="btn_actualizarVehiculo" layoutX="700.0" layoutY="290.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="42.0" prefWidth="212.0" style="-fx-background-color: #ffc300; -fx-border-color: black; -fx-border-width: 2;" text="Actualizar Vehiculo" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button id="btn_agregarVh" fx:id="btn_agregaVehiculo" layoutX="700.0" layoutY="347.0" mnemonicParsing="false" onAction="#onAgregar" prefHeight="42.0" prefWidth="212.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Agregar Vehiculo" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button id="btn_eliminar" fx:id="btn_eliminar" layoutX="748.0" layoutY="689.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <TextField id="lbl_cajaVh" fx:id="txf_caja" layoutX="384.0" layoutY="129.0" prefHeight="38.0" prefWidth="275.0" />
+      <Text fx:id="txt_caja" layoutX="361.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caja" textAlignment="CENTER" wrappingWidth="92.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

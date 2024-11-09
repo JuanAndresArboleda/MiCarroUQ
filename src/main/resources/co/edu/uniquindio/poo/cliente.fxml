@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_reservas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="895.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ReservasViewController">
+   <children>
+      <SubScene fx:id="ssc_fondo2" height="386.0" layoutX="26.0" layoutY="340.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene fx:id="ssc_fondo1" height="296.0" layoutX="26.0" layoutY="25.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text fx:id="txt_nombreCliente" layoutX="203.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre cliente" textAlignment="CENTER" wrappingWidth="153.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_cancelarAlquiler" layoutX="330.0" layoutY="244.0" mnemonicParsing="false" onAction="#onCancelarAlq" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Cancelar Alquiler" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt_tucarro" fill="#ffc300" layoutX="311.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUCARRO.COM" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_bienvenido" fill="#ffc300" layoutX="53.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_quedeseahacer" fill="#566573" layoutX="76.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que desea hacer?" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_cerrarSesion" layoutX="77.0" layoutY="659.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2;" text="Cerrar Sesion" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="79.0" layoutY="404.0" prefHeight="234.0" prefWidth="738.0">
+         <columns>
+            <TableColumn fx:id="tbc_id" prefWidth="257.0" text="Id" />
+            <TableColumn fx:id="tbc_tiempo" prefWidth="235.0" text="Tiempo (Dias)" />
+            <TableColumn fx:id="tbc_matricula" prefWidth="245.0" text="Vehiculo (Matricula)" />
+         </columns>
+      </TableView>
+      <Text fx:id="txt_reservas" fill="#ffc300" layoutX="65.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIS RESERVAS" textAlignment="CENTER" wrappingWidth="224.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_carro" fitHeight="365.0" fitWidth="404.0" layoutX="546.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_alquilarVh" layoutX="79.0" layoutY="244.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Alquilar Vehiculo" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

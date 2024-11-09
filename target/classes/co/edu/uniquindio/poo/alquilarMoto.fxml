@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_alquilarMoto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="1176.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AlquilarMotoViewController">
+   <children>
+      <SubScene fx:id="ssc_fondo2" height="369.0" layoutX="26.0" layoutY="388.0" width="1124.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene fx:id="ssc_fondo1" height="346.0" layoutX="26.0" layoutY="25.0" width="1124.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text id="lbl_empresa" fx:id="txt_tucarro" fill="#ffc300" layoutX="451.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUCARRO.COM" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_alquilarVehiculo" fill="#566573" layoutX="25.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alquilar Moto" textAlignment="CENTER" wrappingWidth="309.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button id="btn_volver" fx:id="btn_volver" layoutX="79.0" layoutY="697.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text id="lbl_reserva" fx:id="txt_vehiculos" fill="#ffc300" layoutX="41.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motos" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_carro" fitHeight="440.0" fitWidth="437.0" layoutX="598.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TableView id="tb_listVehiculos" fx:id="tb_listMotos" layoutX="79.0" layoutY="452.0" prefHeight="221.0" prefWidth="1019.0">
+         <columns>
+            <TableColumn id="tbc_cedulaCl" fx:id="tbc_modelo" prefWidth="170.0" text="Modelo" />
+            <TableColumn id="tbc_nombreCl" fx:id="tbc_marca" prefWidth="166.0" text="Marca" />
+            <TableColumn id="tbc_telefonoCl" fx:id="tbc_matricula" prefWidth="161.0" text="Matricula" />
+            <TableColumn id="tbc_correoCl" fx:id="tbc_añoFabricacion" prefWidth="208.0" text="Año Fabricacion" />
+            <TableColumn id="tbc_reservasCl" fx:id="tbc_disponible" prefWidth="170.0" text="Disponible" />
+            <TableColumn fx:id="tbc_caja" prefWidth="143.0" text="Caja" />
+         </columns>
+      </TableView>
+      <TextField id="lbl_tiemporReserva" fx:id="txf_tiempoReserva" layoutX="82.0" layoutY="169.0" prefHeight="38.0" prefWidth="409.0" />
+      <Text fx:id="txt_tiempoReserva" layoutX="75.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo Reserva" textAlignment="CENTER" wrappingWidth="169.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Button id="btn_reservar" fx:id="btn_reservar" layoutX="937.0" layoutY="697.0" mnemonicParsing="false" onAction="#onReservar" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Reservar" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt_detallesUso" layoutX="74.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles de uso" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txf_detallesUso" layoutX="82.0" layoutY="252.0" prefHeight="86.0" prefWidth="409.0" />
+   </children>
+</AnchorPane>
