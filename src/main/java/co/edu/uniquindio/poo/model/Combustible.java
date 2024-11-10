@@ -8,28 +8,28 @@ public class Combustible {
     }
 
     public static class Electrico extends Combustible {
-        private int autonomiacargcompleta;
-        private String tiempodecarga;
+        private int autonomiaCargCompleta;
+        private String tiempoCarga;
 
-        public Electrico(int autonomiacargcompleta, String tiempodecarga) {
-            this.autonomiacargcompleta = autonomiacargcompleta;
-            this.tiempodecarga = tiempodecarga;
+        public Electrico(int autonomiaCargCompleta, String tiempoCarga) {
+            this.autonomiaCargCompleta = autonomiaCargCompleta;
+            this.tiempoCarga = tiempoCarga;
         }
 
-        public int getAutonomiacargcompleta() {
-            return autonomiacargcompleta;
+        public int getAutonomiaCargCompleta() {
+            return autonomiaCargCompleta;
         }
 
-        public void setAutonomiacargcompleta(int autonomiacargcompleta) {
-            this.autonomiacargcompleta = autonomiacargcompleta;
+        public void setAutonomiaCargCompleta(int autonomiaCargCompleta) {
+            this.autonomiaCargCompleta = autonomiaCargCompleta;
         }
 
-        public String getTiempodecarga() {
-            return tiempodecarga;
+        public String getTiempoCarga() {
+            return tiempoCarga;
         }
 
-        public void setTiempodecarga(String tiempodecarga) {
-            this.tiempodecarga = tiempodecarga;
+        public void setTiempoCarga(String tiempoCarga) {
+            this.tiempoCarga = tiempoCarga;
         }
     }
 
@@ -42,3 +42,4 @@ public class Combustible {
         public static final Hibrido ENCHUFABLE = new Hibrido();
     }
 }
+
