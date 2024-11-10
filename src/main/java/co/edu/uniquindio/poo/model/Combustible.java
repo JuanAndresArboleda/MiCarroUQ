@@ -8,20 +8,20 @@ public class Combustible {
     }
 
     public static class Electrico extends Combustible {
-        private int autonomiaCargCompleta;
+        private int autonomiaCargaCompleta;
         private String tiempoCarga;
 
-        public Electrico(int autonomiaCargCompleta, String tiempoCarga) {
-            this.autonomiaCargCompleta = autonomiaCargCompleta;
+        public Electrico(int autonomiaCargaCompleta, String tiempoCarga) {
+            this.autonomiaCargaCompleta = autonomiaCargaCompleta;
             this.tiempoCarga = tiempoCarga;
         }
 
-        public int getAutonomiaCargCompleta() {
-            return autonomiaCargCompleta;
+        public int getAutonomiaCargaCompleta() {
+            return autonomiaCargaCompleta;
         }
 
-        public void setAutonomiaCargCompleta(int autonomiaCargCompleta) {
-            this.autonomiaCargCompleta = autonomiaCargCompleta;
+        public void setAutonomiaCargaCompleta(int autonomiaCargaCompleta) {
+            this.autonomiaCargaCompleta = autonomiaCargaCompleta;
         }
 
         public String getTiempoCarga() {
