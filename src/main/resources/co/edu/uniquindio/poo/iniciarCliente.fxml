@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_cliente" fx:controller="co.edu.uniquindio.poo.viewController.ClienteViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ap_iniciarCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.IniciarClienteViewController">
    <children>
       <Label layoutX="214.0" layoutY="128.0" text="Nombre" />
       <SubScene height="385.0" layoutX="27.0" layoutY="28.0" width="526.0">
@@ -19,12 +19,12 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Button id="btn_ingresarCl" fx:id="btn_ingresar" layoutX="334.0" layoutY="334.0" mnemonicParsing="false" onAction="#onIngresarCl" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Ingresar" textFill="WHITE">
+      <Button id="btn_ingresarCl" fx:id="btn_ingresar" layoutX="334.0" layoutY="334.0" mnemonicParsing="false" onAction="#onIngresarCl" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Ingresar" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button id="btn_volver" fx:id="btn_volver" layoutX="86.0" layoutY="334.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Volver" textFill="WHITE">
+      <Button id="btn_volver" fx:id="btn_volver" layoutX="86.0" layoutY="334.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
@@ -41,7 +41,7 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Text fx:id="txt_cliente" fill="#ffc300" layoutX="209.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <Text fx:id="txt_cliente" fill="#219c90" layoutX="209.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
          </font>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_seleccionVehiculo1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.SeleccionVh1ViewController">
+   <children>
+      <Label layoutX="214.0" layoutY="128.0" text="Nombre" />
+      <SubScene height="472.0" layoutX="27.0" layoutY="28.0" width="679.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text id="txt_nombre" layoutX="47.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que tipo de vehiculo desea gestionar?" textAlignment="CENTER" wrappingWidth="372.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Button id="btn_volver" fx:id="btn_volver" layoutX="60.0" layoutY="438.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text id="txt_iniciarSesion" fx:id="txt_iniciarSesion" fill="#ffc300" layoutX="237.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Vehiculos" textAlignment="CENTER" wrappingWidth="258.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Text id="txt_administrador" fx:id="txt_administrador" fill="#ffc300" layoutX="285.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestionar" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_carro" fitHeight="443.0" fitWidth="444.0" layoutX="317.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LOGO.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_hibrido" layoutX="146.0" layoutY="197.0" mnemonicParsing="false" onAction="#onHibrido" prefHeight="42.0" prefWidth="171.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Hibrido" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_combustible" layoutX="146.0" layoutY="265.0" mnemonicParsing="false" onAction="#onCombustible" prefHeight="42.0" prefWidth="171.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="A Combustible" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_electrico" layoutX="146.0" layoutY="336.0" mnemonicParsing="false" onAction="#onElectrico" prefHeight="42.0" prefWidth="171.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Electrico" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

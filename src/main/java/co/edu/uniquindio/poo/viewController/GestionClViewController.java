@@ -67,11 +67,10 @@ public class GestionClViewController {
 
     @FXML
     void onVolver(ActionEvent event) {
-        app.openEmpresa();
+        app.volver();
     }
 
     @FXML
-
     void onActualizar(ActionEvent event) {
         actualizarCliente();
     }
@@ -84,7 +83,6 @@ public class GestionClViewController {
     @FXML
     void onEliminar(ActionEvent event) {
         eliminarCliente();
-
     }
 
     App app;
@@ -97,9 +95,10 @@ public class GestionClViewController {
     ObservableList<Cliente> listClientes = FXCollections.observableArrayList();
     Cliente selectedCliente;
 
+    @SuppressWarnings("static-access")
     @FXML
     void initialize() {
-        gestionClController = new GestionClController(app.empresa);
+        gestionClController = new GestionClController(app.consesionario);
         initView();
     }
 
@@ -119,8 +118,7 @@ public class GestionClViewController {
 
     private void initDataBinding() {
         tbc_nombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
-        tbc_cedula.setCellValueFactory(
-                cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getCedula())));
+        tbc_cedula.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getId())));
         tbc_telefono.setCellValueFactory(
                 cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTelefono())));
         tbc_correo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCorreo()));
@@ -140,7 +138,7 @@ public class GestionClViewController {
 
     private void mostrarInformacionCliente(Cliente cliente) {
         if (cliente != null) {
-            txf_cedula.setText(Integer.toString(cliente.getCedula()));
+            txf_cedula.setText(Integer.toString(cliente.getId()));
             txf_nombre.setText(cliente.getNombre());
             txf_telefono.setText(Integer.toString(cliente.getTelefono()));
             txf_correo.setText(cliente.getCorreo());
@@ -157,15 +155,15 @@ public class GestionClViewController {
     }
 
     private Cliente buildCliente() {
-        int cedula = Integer.parseInt(txf_cedula.getText());
+        int id = Integer.parseInt(txf_cedula.getText());
         int telefono = Integer.parseInt(txf_telefono.getText());
-        Cliente cliente = new Cliente(txf_nombre.getText(), cedula, telefono, txf_correo.getText());
+        Cliente cliente = new Cliente(txf_nombre.getText(), id, telefono, txf_correo.getText());
         return cliente;
     }
 
     private void eliminarCliente() {
-        int cedula = Integer.parseInt(txf_cedula.getText()); // Convierte el texto a entero
-        if (gestionClController.eliminarCliente(cedula)) { // Pasa el entero como argumento
+        int id = Integer.parseInt(txf_cedula.getText()); // Convierte el texto a entero
+        if (gestionClController.eliminarCliente(id)) { // Pasa el entero como argumento
             listClientes.remove(selectedCliente);
             limpiarCamposCliente();
             limpiarSeleccion();
@@ -175,7 +173,7 @@ public class GestionClViewController {
 
     private void actualizarCliente() {
 
-        if (selectedCliente != null && gestionClController.actualizarCliente(selectedCliente.getCedula(), buildCliente())) {
+        if (selectedCliente != null && gestionClController.actualizarCliente(selectedCliente.getId(), buildCliente())) {
             int index = listClientes.indexOf(selectedCliente);
             if (index >= 0) {
                 listClientes.set(index, buildCliente());

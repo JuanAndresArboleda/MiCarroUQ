@@ -7,75 +7,158 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_empresa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="895.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.EmpresaViewController">
+<AnchorPane fx:id="ap_administrador" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AdministradorViewController">
    <children>
-      <SubScene height="386.0" layoutX="26.0" layoutY="339.0" width="844.0">
+      <SubScene height="727.0" layoutX="1040.0" layoutY="12.0" width="253.0">
          <root>
             <Region />
          </root>
       </SubScene>
-      <SubScene height="295.0" layoutX="26.0" layoutY="25.0" width="844.0">
+      <SubScene height="727.0" layoutX="14.0" layoutY="11.0" width="253.0">
          <root>
             <Region />
          </root>
       </SubScene>
-      <Text id="lbl_nombreAd" fx:id="txt_nombreAdministrador" layoutX="194.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre administrador" textAlignment="CENTER" wrappingWidth="237.86474609375">
+      <SubScene fx:id="ssc_fondo2" height="507.0" layoutX="282.0" layoutY="231.0" width="743.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene fx:id="ssc_fondo1" height="206.0" layoutX="282.0" layoutY="13.0" width="743.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text fx:id="txt_nombreCliente" layoutX="492.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Administrador" textAlignment="CENTER" wrappingWidth="224.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Button id="btn_GestionVh" fx:id="btn_gestionVehiculos" layoutX="345.0" layoutY="244.0" mnemonicParsing="false" onAction="#onGestionVh" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Gestion Vehiculos" textFill="WHITE">
+      <Button fx:id="btn_gestionVentas" layoutX="1064.0" layoutY="331.0" mnemonicParsing="false" onAction="#onGestionVentas" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Gestionar Ventas" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button id="btn_gestionCl" fx:id="btn_gestionClientes" layoutX="79.0" layoutY="244.0" mnemonicParsing="false" onAction="#onGestionCl" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Gestion Clientes" textFill="WHITE">
-         <font>
-            <Font name="Arial Black" size="17.0" />
-         </font>
-      </Button>
-      <Text id="lbl_empresa" fx:id="txt_tucarro" fill="#ffc300" layoutX="311.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TUCARRO.COM" textAlignment="CENTER" wrappingWidth="274.92919921875">
+      <Text fx:id="txt_tucarro" fill="#219c90" layoutX="512.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MiCarroUQ" textAlignment="CENTER" wrappingWidth="274.92919921875">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <Text fx:id="txt_bienvenido" fill="#ffc300" layoutX="53.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <Text fx:id="txt_quedeseahacer" fill="#566573" layoutX="310.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que desea hacer?" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_cerrarSesion" layoutX="32.0" layoutY="670.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Cerrar Sesion" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <TableView id="tb_listReservas" fx:id="tb_listTransacciones" layoutX="313.0" layoutY="299.0" prefHeight="162.0" prefWidth="673.0">
+         <columns>
+            <TableColumn prefWidth="125.0" text="Column X" />
+         </columns>
+      </TableView>
+      <Text fx:id="txt_reservas" fill="#ffc300" layoutX="301.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro Transacciones" textAlignment="CENTER" wrappingWidth="356.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_carro" fitHeight="278.0" fitWidth="348.0" layoutX="993.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LOGO.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_gestionAlquiler" layoutX="32.0" layoutY="385.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Gestionar Alquiler" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_registrarVh" layoutX="32.0" layoutY="275.0" mnemonicParsing="false" onAction="#onRegistrarVh" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Registrar Vehiculos" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_registrarCl" layoutX="1064.0" layoutY="278.0" mnemonicParsing="false" onAction="#onRegistrarCl" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Registrar Clientes" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_comprarVh" layoutX="32.0" layoutY="329.0" mnemonicParsing="false" onAction="#onComprarVh" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Comprar Vehiculos" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="141.0" fitWidth="181.0" layoutX="47.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Face.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_quedeseahacer1" fill="#ffc300" layoutX="295.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="203.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Separator layoutX="28.0" layoutY="262.0" prefHeight="4.0" prefWidth="225.0" style="-fx-background-color: gray;" />
+      <Separator layoutX="1060.0" layoutY="268.0" prefHeight="4.0" prefWidth="225.0" style="-fx-background-color: gray;" />
+      <Text fx:id="txt_nombreCliente1" layoutX="21.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehiculos" textAlignment="CENTER" wrappingWidth="224.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Text fx:id="txt_queDeseaHacer" fill="#566573" layoutX="76.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que desea hacer?" textAlignment="CENTER" wrappingWidth="274.92919921875">
+      <Text fx:id="txt_nombreCliente11" layoutX="1053.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes" textAlignment="CENTER" wrappingWidth="224.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Text id="lbl_reserva" fx:id="txt_reservas1" fill="#ffc300" layoutX="299.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVAS" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <Button id="btn_cerrar" fx:id="btn_cerrarSesion" layoutX="617.0" layoutY="665.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="42.0" prefWidth="201.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2;" text="Cerrar Sesion" textFill="WHITE">
-         <font>
-            <Font name="Arial Black" size="17.0" />
-         </font>
-      </Button>
-      <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="79.0" layoutY="403.0" prefHeight="240.0" prefWidth="738.0">
-        <columns>
-          <TableColumn id="tbc_idR" fx:id="tbc_id" prefWidth="127.0" text="Id" />
-            <TableColumn id="tbc_tiempoR" fx:id="tbc_tiempo" prefWidth="151.0" text="Tiempo" />
-            <TableColumn id="tbc_clienteR" fx:id="tbc_cliente" prefWidth="236.0" text="Cliente">
+      <TableView id="tb_listReservas" fx:id="tb_listReservas" layoutX="313.0" layoutY="533.0" prefHeight="155.0" prefWidth="673.0">
+         <columns>
+            <TableColumn id="tbc_tiempoR" fx:id="tbc_tiempo" prefWidth="196.0" text="Tiempo Reserva" />
+            <TableColumn id="tbc_clienteR" fx:id="tbc_cliente" prefWidth="270.0" text="Cliente">
                <columns>
                   <TableColumn id="tbc_nombreClienteR" fx:id="tbc_nombre" prefWidth="125.0" text="Nombre" />
                   <TableColumn id="tbc_cedulaClienteR" fx:id="tbc_cedula" prefWidth="128.0" text="Cedula" />
                </columns>
             </TableColumn>
-            <TableColumn id="tbc_matriculaVehiculoR" fx:id="tbc_matricula" prefWidth="206.0" text="Vehiculo (Matricula)" />
-        </columns>
+            <TableColumn id="tbc_matriculaVehiculoR" fx:id="tbc_matricula" prefWidth="223.0" text="Vehiculo (Matricula)" />
+         </columns>
       </TableView>
-      <Text id="lbl_reserva" fx:id="txt_reservas" fill="#ffc300" layoutX="70.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVAS" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <Text fx:id="txt_nombreCliente12" layoutX="19.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empleados" textAlignment="CENTER" wrappingWidth="224.86474609375">
          <font>
-            <Font name="Bauhaus 93" size="33.0" />
+            <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <ImageView fx:id="img_carro" fitHeight="365.0" fitWidth="404.0" layoutX="546.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Imagen_de_WhatsApp_2024-10-26_a_las_13.16.28_569082e0-removebg-preview.png" />
-         </image>
-      </ImageView>
+      <Separator layoutX="27.0" layoutY="493.0" prefHeight="4.0" prefWidth="225.0" style="-fx-background-color: gray;" />
+      <Button fx:id="btn_reportes" layoutX="33.0" layoutY="558.0" mnemonicParsing="false" onAction="#onReportes" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Reportes" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_gestionEmpleados" layoutX="33.0" layoutY="507.0" mnemonicParsing="false" onAction="#onGestionEmpleados" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Gestion Empleados" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="1064.0" layoutY="507.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Quienes somos" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Separator layoutX="1056.0" layoutY="494.0" prefHeight="4.0" prefWidth="225.0" style="-fx-background-color: gray;" />
+      <Text fx:id="txt_nombreCliente121" layoutX="1052.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Otros" textAlignment="CENTER" wrappingWidth="224.86474609375">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_reservas" layoutX="1064.0" layoutY="385.0" mnemonicParsing="false" onAction="#onReservas" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Reservas" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

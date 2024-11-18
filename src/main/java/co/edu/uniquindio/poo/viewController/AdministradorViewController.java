@@ -3,39 +3,149 @@ package co.edu.uniquindio.poo.viewController;
 import co.edu.uniquindio.poo.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.SubScene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 public class AdministradorViewController {
 
-    @SuppressWarnings("exports")
     @FXML
-    public TextField txf_nombreAd;
+    private AnchorPane ap_reservas;
 
     @FXML
-    private Button btn_volver;
+    private SubScene ssc_fondo2;
 
     @FXML
-    private Text txt_iniciarSesion;
+    private TableColumn<?, ?> tbc_tiempo;
 
     @FXML
-    private Button btn_ingresar;
+    private SubScene ssc_fondo1;
 
     @FXML
-    private TextField txf_contraseña;
+    private Button btn_comprarVh;
 
     @FXML
-    private Text txt_administrador;
+    private TableView<?> tb_listReservas;
 
     @FXML
-    void onIngresar(ActionEvent event) {
-        app.openEmpresa();
+    private Button btn_reportes;
+
+    @FXML
+    private ImageView img_carro;
+
+    @FXML
+    private Button btn_reservas;
+
+    @FXML
+    private TableColumn<?, ?> tbc_nombre;
+
+    @FXML
+    private Text txt_nombreCliente;
+
+    @FXML
+    private Text txt_quedeseahacer;
+
+    @FXML
+    private Text txt_reservas;
+
+    @FXML
+    private Text txt_tucarro;
+
+    @FXML
+    private Text txt_reservas1;
+
+    @FXML
+    private TableColumn<?, ?> tbc_cedula;
+
+    @FXML
+    private Button btn_gestionAlquiler;
+
+    @FXML
+    private TableColumn<?, ?> tbc_cliente;
+
+    @FXML
+    private Button btn_registrarVh;
+
+    @FXML
+    private Button btn_gestionVentas;
+
+    @FXML
+    private Button btn_gestionEmpleados;
+
+    @FXML
+    private Button btn_registrarCl;
+
+    @FXML
+    private Text txt_quedeseahacer1;
+
+    @FXML
+    private TableColumn<?, ?> tbc_matricula;
+
+    @FXML
+    private Text txt_nombreCliente121;
+
+    @FXML
+    private Text txt_nombreCliente1;
+
+    @FXML
+    private Text txt_nombreCliente11;
+
+    @FXML
+    private Text txt_nombreCliente12;
+
+    @FXML
+    private Button btn_cerrarSesion;
+
+    @FXML
+    private TableView<?> tb_listTransacciones;
+
+    @FXML
+    void onGestionVentas(ActionEvent event) {
+        app.openGestionVenta();
     }
 
     @FXML
-    void onVolver(ActionEvent event) {
-        app.openUsuario();
+    void onCerrar(ActionEvent event) {
+        app.openUsuarios();
+    }
+
+    @FXML
+    void onAlquilar(ActionEvent event) {
+        app.openGestionAlquiler();
+    }
+
+    @FXML
+    void onRegistrarVh(ActionEvent event) {
+        app.openGestionVh();
+    }
+
+    @FXML
+    void onRegistrarCl(ActionEvent event) {
+        app.openGestionCl();
+    }
+
+    @FXML
+    void onComprarVh(ActionEvent event) {
+        app.openCompraVh();
+    }
+
+    @FXML
+    void onReportes(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onGestionEmpleados(ActionEvent event) {
+        app.openGestionEmp();
+    }
+
+    @FXML
+    void onReservas(ActionEvent event) {
+
     }
 
     App app;
@@ -44,7 +154,4 @@ public class AdministradorViewController {
         this.app = app;
     }
 
-    public String obtenerNombre() {
-        return txf_nombreAd.getText();
-    }
 }

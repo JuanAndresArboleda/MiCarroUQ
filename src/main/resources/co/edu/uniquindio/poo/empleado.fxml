@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_reservas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1121.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ReservasViewController">
+<AnchorPane fx:id="ap_empleado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1121.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.EmpleadoViewController">
    <children>
       <SubScene height="710.0" layoutX="14.0" layoutY="11.0" width="253.0">
         <root>
@@ -29,7 +29,7 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Button fx:id="btn_cancelarAlquiler" layoutX="32.0" layoutY="551.0" mnemonicParsing="false" onAction="#onCancelarAlq" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2;" text="Gestionar Ventas" textFill="WHITE">
+      <Button fx:id="btn_gestionVentas" layoutX="32.0" layoutY="551.0" mnemonicParsing="false" onAction="#onGestionVentas" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Gestionar Ventas" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <Button fx:id="btn_cerrarSesion" layoutX="32.0" layoutY="657.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2;" text="Cerrar Sesion" textFill="WHITE">
+      <Button fx:id="btn_cerrarSesion" layoutX="32.0" layoutY="657.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Cerrar Sesion" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
@@ -64,29 +64,29 @@
             <Image url="@LOGO.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_alquilarVh" layoutX="32.0" layoutY="385.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2;" text="Gestionar Alquiler" textFill="WHITE">
+      <Button fx:id="btn_gestionAlquiler" layoutX="32.0" layoutY="385.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Gestionar Alquiler" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btn_alquilarVh1" layoutX="32.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2;" text="Registrar Vehiculos" textFill="WHITE">
+      <Button fx:id="btn_registrarVh" layoutX="32.0" layoutY="275.0" mnemonicParsing="false" onAction="#onRegistrarVh" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Registrar Vehiculos" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btn_alquilarVh2" layoutX="32.0" layoutY="498.0" mnemonicParsing="false" onAction="#onAlquilar" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2;" text="Registrar Clientes" textFill="WHITE">
+      <Button fx:id="btn_registrarCl" layoutX="32.0" layoutY="498.0" mnemonicParsing="false" onAction="#onRegistrarCl" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Registrar Clientes" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btn_cancelarAlquiler1" layoutX="32.0" layoutY="329.0" mnemonicParsing="false" onAction="#onCancelarAlq" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2;" text="Comprar Vehiculos" textFill="WHITE">
+      <Button fx:id="btn_comprarVh" layoutX="32.0" layoutY="329.0" mnemonicParsing="false" onAction="#onComprarVh" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Comprar Vehiculos" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
       <ImageView fitHeight="170.0" fitWidth="161.0" layoutX="58.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../Imágenes/Captura%20de%20pantalla%202024-06-24%20174032.png" />
+            <Image url="@Bebe.png" />
          </image>
       </ImageView>
       <Text fx:id="txt_quedeseahacer1" fill="#ffc300" layoutX="295.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="203.92919921875">

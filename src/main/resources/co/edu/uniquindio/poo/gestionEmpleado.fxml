@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_gestionEmpleado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="781.0" prefWidth="893.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.GestionEmpViewController">
+   <children>
+      <SubScene height="348.0" layoutX="26.0" layoutY="412.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene height="387.0" layoutX="26.0" layoutY="11.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text fill="#ffc700" layoutX="58.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Empleados" textAlignment="CENTER" wrappingWidth="309.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button id="btn_volver" fx:id="btn_volder" layoutX="79.0" layoutY="692.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="222.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text id="lbl_reserva" fill="#ffc300" layoutX="74.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empleados" textAlignment="CENTER" wrappingWidth="160.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <TableView id="tb_listClientes" fx:id="tb_listEmpleados" layoutX="79.0" layoutY="460.0" prefHeight="214.0" prefWidth="748.0">
+         <columns>
+            <TableColumn id="tbc_nombreCl" fx:id="tbc_nombre" prefWidth="176.0" text="Nombre" />
+            <TableColumn id="tbc_cedulaCl" fx:id="tbc_cedula" prefWidth="174.0" text="Cedula" />
+            <TableColumn id="tbc_telefonoCl" fx:id="tbc_telefono" prefWidth="171.0" text="Telefono" />
+            <TableColumn id="tbc_correoCl" fx:id="tbc_correo" prefWidth="226.0" text="Correo" />
+         </columns>
+      </TableView>
+      <TextField id="lbl_cedulaCl" fx:id="txf_cedula" layoutX="82.0" layoutY="203.0" prefHeight="38.0" prefWidth="409.0" promptText="Cedula" />
+      <TextField id="lbl_telefonoCl" fx:id="txf_telefono" layoutX="82.0" layoutY="265.0" prefHeight="38.0" prefWidth="409.0" promptText="Telefono" />
+      <TextField id="lbl_correoCl" fx:id="txf_correo" layoutX="82.0" layoutY="326.0" prefHeight="38.0" prefWidth="409.0" promptText="Correo" />
+      <Button id="btn_actualizarCl" fx:id="btn_actualizarCliente" layoutX="606.0" layoutY="323.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="42.0" prefWidth="222.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Actualizar Empleado" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Button id="btn_eliminar" fx:id="btn_eliminar" layoutX="606.0" layoutY="692.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="42.0" prefWidth="222.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="img_carro" fitHeight="289.0" fitWidth="330.0" layoutX="546.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LOGO.png" />
+         </image>
+      </ImageView>
+      <TextField id="lbl_cedulaCl" fx:id="txf_nombre" layoutX="82.0" layoutY="144.0" prefHeight="38.0" prefWidth="409.0" promptText="Nombre" />
+      <Text fx:id="txt_tucarro" fill="#219c90" layoutX="309.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MiCarroUQ" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button id="btn_agregarCl" fx:id="btn_agregarCliente" layoutX="606.0" layoutY="262.0" mnemonicParsing="false" onAction="#onAgregar" prefHeight="42.0" prefWidth="222.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Agregar Empleado" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

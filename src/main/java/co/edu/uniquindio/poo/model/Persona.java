@@ -1,16 +1,14 @@
-package co.edu.uniquindio.poo.Model.Personas;
+package co.edu.uniquindio.poo.model;
 
 public class Persona {
 
     private String nombre;
-    private String apellido;
-    private String id;
+    private int id;
     private int telefono;
     private String correo;
 
-    public Persona(String nombre, String apellido, String id, int telefono, String correo){
+    public Persona(String nombre, int id, int telefono, String correo) {
         this.nombre = nombre;
-        this.apellido = apellido;
         this.id = id;
         this.telefono = telefono;
         this.correo = correo;
@@ -24,19 +22,11 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -58,10 +48,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", telefono=" + telefono
-                + ", correo=" + correo + "]";
+        return "Persona [nombre=" + nombre + ", id=" + id + ", telefono=" + telefono + ", correo=" + correo + "]";
     }
 
-  
-    
 }

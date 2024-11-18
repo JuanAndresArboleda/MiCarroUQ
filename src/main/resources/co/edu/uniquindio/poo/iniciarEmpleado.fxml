@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ap_empleado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AdministradorViewController">
+<AnchorPane fx:id="ap_iniciarEmpleado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.IniciarEmpleadoViewController">
    <children>
       <Label layoutX="214.0" layoutY="128.0" text="Nombre" />
       <SubScene height="385.0" layoutX="27.0" layoutY="28.0" width="526.0">
@@ -19,12 +19,12 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Button id="btn_ingresarAd" fx:id="btn_ingresar" layoutX="334.0" layoutY="334.0" mnemonicParsing="false" onAction="#onIngresar" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #C70039; -fx-border-color: black; -fx-border-width: 2;" text="Ingresar" textFill="WHITE">
+      <Button id="btn_ingresarAd" fx:id="btn_ingresar" layoutX="334.0" layoutY="334.0" mnemonicParsing="false" onAction="#onIngresar" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Ingresar" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Button id="btn_volver" fx:id="btn_volver" layoutX="86.0" layoutY="334.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #1565c0; -fx-border-color: black; -fx-border-width: 2;" text="Volver" textFill="WHITE">
+      <Button id="btn_volver" fx:id="btn_volver" layoutX="86.0" layoutY="334.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
          </font>
@@ -34,14 +34,14 @@
             <Font name="Bauhaus 93" size="33.0" />
          </font>
       </Text>
-      <TextField id="lbl_nombreAd" fx:id="txf_nombreAd" layoutX="86.0" layoutY="155.0" prefHeight="38.0" prefWidth="409.0" />
-      <TextField id="lbl_contraseñaAd" fx:id="txf_contraseña" layoutX="86.0" layoutY="243.0" prefHeight="38.0" prefWidth="409.0" />
-      <Text id="txt_contraseña" layoutX="59.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <TextField id="lbl_nombreAd" fx:id="txf_nombre" layoutX="86.0" layoutY="155.0" prefHeight="38.0" prefWidth="409.0" />
+      <TextField id="lbl_contraseñaAd" fx:id="txf_cedula" layoutX="86.0" layoutY="243.0" prefHeight="38.0" prefWidth="409.0" />
+      <Text id="txt_contraseña" layoutX="38.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Text id="txt_administrador" fx:id="txt_administrador" fill="#ffc300" layoutX="209.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empleado" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <Text id="txt_administrador" fx:id="txt_administrador" fill="#219c90" layoutX="209.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empleado" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
