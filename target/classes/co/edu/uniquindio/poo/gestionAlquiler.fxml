@@ -29,7 +29,7 @@
             <Font name="Arial Black" size="17.0" />
          </font>
       </Button>
-      <Text id="lbl_reserva" fill="#ffc300" layoutX="66.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solicitudes de alquiler" textAlignment="CENTER" wrappingWidth="347.86474609375">
+      <Text id="lbl_reserva" fill="#ffc300" layoutX="66.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solicitudes de alquiler" textAlignment="CENTER" wrappingWidth="347.86474609375">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>

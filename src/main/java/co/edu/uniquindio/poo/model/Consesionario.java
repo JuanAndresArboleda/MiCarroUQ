@@ -11,6 +11,10 @@ public class Consesionario {
     private Collection<Administrador> administradores;
     private Collection<Empleado> empleados;
     private Collection<Cliente> clientes;
+    private Collection<Alquiler> alquileres;
+    private Collection<Venta> ventas;
+    private Collection<Compra> compras;
+
 
   
     public Consesionario(String nombre, int id) {
@@ -20,6 +24,9 @@ public class Consesionario {
         administradores = new LinkedList<>();
         empleados = new LinkedList<>();
         clientes = new LinkedList<>();
+        alquileres = new LinkedList<>();
+        ventas = new LinkedList<>();
+        compras = new LinkedList<>();
     }
 
     /**
@@ -125,6 +132,31 @@ public class Consesionario {
     public void setClientes(Collection<Cliente> clientes) {
         this.clientes = clientes;
     }
+
+    public Collection<Alquiler> getAlquileres() {
+        return alquileres;
+    }
+
+    public void setAlquileres(Collection<Alquiler> alquileres) {
+        this.alquileres = alquileres;
+    }
+
+    public Collection<Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(Collection<Venta> ventas) {
+        this.ventas = ventas;
+    }
+
+    public Collection<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(Collection<Compra> compras) {
+        this.compras = compras;
+    }
+
 
     @Override
     public String toString() {
@@ -254,7 +286,7 @@ public class Consesionario {
         return centinela;
     }
 
-    // ------------------------------------------------Clientes---------------------------------------------------//
+    // ------------------------------------------------Vehiculos---------------------------------------------------//
 
 
     public boolean agregarVehiculo(Vehiculo vehiculo) {
@@ -302,6 +334,153 @@ public class Consesionario {
         for (Vehiculo vehiculo : vehiculos) {
             if (vehiculo.getMatricula().equals(matricula)) {
                 centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+// ------------------------------------------------Alquileres---------------------------------------------------//
+
+
+    public boolean verificarAlquiler(String codigo) {
+        boolean centinela = false;
+        for (Alquiler alquiler : alquileres) {
+            if (alquiler.getCodigo().equals(codigo)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+public boolean agregarAlquiler(Alquiler alquiler) {
+        boolean centinela = false;
+        if (!verificarAlquiler(alquiler.getCodigo())) {
+            alquileres.add(alquiler);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarAlquiler(String codigo) {
+        boolean centinela = false;
+        for (Alquiler alquiler : alquileres) {
+            if (alquiler.getCodigo().equals(codigo)) {
+                alquileres.remove(alquiler);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarAlquiler(String codigo, Alquiler actualizado) {
+        boolean centinela = false;
+        for (Alquiler alquiler : alquileres) {
+            if (alquiler.getCodigo().equals(codigo)) {
+                alquiler.setCliente(actualizado.getCliente());
+                alquiler.setCodigo(actualizado.getCodigo());
+                alquiler.setVehiculo(actualizado.getVehiculo());
+                alquiler.setEstadoAlq(actualizado.getEstadoAlq());
+                alquiler.setTiempoAlquiler(actualizado.getTiempoAlquiler());
+
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+// ------------------------------------------------Ventas---------------------------------------------------//
+
+    public boolean verificarVenta(String id) {
+        boolean centinela = false;
+        for (Venta venta : ventas) {
+            if (venta.getId().equals(id)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+public boolean agregarVenta(Venta venta) {
+        boolean centinela = false;
+        if (!verificarVenta(venta.getId())) {
+            ventas.add(venta);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarVenta(String id) {
+        boolean centinela = false;
+        for (Venta venta : ventas) {
+            if (venta.getId().equals(id)) {
+                ventas.remove(venta);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarVenta(String id, Venta actualizado) {
+        boolean centinela = false;
+        for (Venta venta : ventas) {
+            if (venta.getId().equals(id)) {
+                venta.setCliente(actualizado.getCliente());
+                venta.setVehiculo(actualizado.getVehiculo());
+                venta.setestadoVenta(actualizado.getEstadoVenta());
+
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+// ------------------------------------------------Compras---------------------------------------------------//
+
+    public boolean verificarCompra(String id) {
+        boolean centinela = false;
+        for (Compra compra : compras) {
+            if (compra.getId().equals(id)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+public boolean agregarCompra(Compra compra) {
+        boolean centinela = false;
+        if (!verificarAlquiler(compra.getId())) {
+            compras.add(compra);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean eliminarCompra(String id) {
+        boolean centinela = false;
+        for (Compra compra : compras) {
+            if (compra.getId().equals(id)) {
+                compras.remove(compra);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean actualizarCompra(String id, Compra actualizado) {
+        boolean centinela = false;
+        for (Compra compra : compras) {
+            if (compra.getId().equals(id)) {
+                compra.setCliente(actualizado.getCliente());
+                compra.setVehiculo(actualizado.getVehiculo());
+                compra.setEstado(actualizado.getEstado());
+
+                centinela = true;
+                break;
             }
         }
         return centinela;

@@ -6,13 +6,13 @@ public class CamionElectrico extends VehiculoElectrico {
     private boolean abs;
     private boolean frenosAire;
     private String numeroEjes;
-    private String tipoCamiondint;
+    private String tipoCamion;
     private Uso uso;
 
-    public CamionElectrico(String marca, Estado estado, int modelo, int cambios, int velocidadmaxima,
+    public CamionElectrico(String marca, Estado estado, int modelo, int cambios, double velocidadmaxima,
             double cilindraje, Transmision transmision,String matricula,int autonomiacargacompleta, String tiempodecarga,
             String capacidadCarga, boolean aireAcondicionado, boolean abs, boolean frenosAire, String numeroEjes,
-            String tipoCamiondint,Uso uso) {
+            String tipoCamion,Uso uso) {
         super(marca, estado, modelo, cambios, velocidadmaxima, cilindraje, transmision,
         autonomiacargacompleta, tiempodecarga,matricula);
 
@@ -21,9 +21,10 @@ public class CamionElectrico extends VehiculoElectrico {
         this.capacidadCarga = capacidadCarga;
         this.frenosAire = frenosAire;
         this.numeroEjes = numeroEjes;
-        this.tipoCamiondint = tipoCamiondint;
+        this.tipoCamion = tipoCamion;
         this.uso = uso;
     }
+
 
     public String getCapacidadCarga() {
         return capacidadCarga;
@@ -64,12 +65,12 @@ public class CamionElectrico extends VehiculoElectrico {
         this.numeroEjes = numeroEjes;
     }
 
-    public String getTipoCamiondint() {
-        return tipoCamiondint;
+    public String getTipoCamion() {
+        return tipoCamion;
     }
 
-    public void setTipoCamiondint(String tipoCamiondint) {
-        this.tipoCamiondint = tipoCamiondint;
+    public void setTipoCamion(String tipoCamion) {
+        this.tipoCamion = tipoCamion;
     }
         
     public Uso getUso() {
@@ -85,8 +86,8 @@ public class CamionElectrico extends VehiculoElectrico {
     @Override
     public String toString() {
         return "CamionElectrico [capacidadCarga=" + capacidadCarga + ", aireAcondicionado=" + aireAcondicionado
-                + ", abs=" + abs + ", frenosAire=" + frenosAire + ", numeroEjes=" + numeroEjes + ", tipoCamiondint="
-                + tipoCamiondint + "]";
+                + ", abs=" + abs + ", frenosAire=" + frenosAire + ", numeroEjes=" + numeroEjes + ", tipoCamion="
+                + tipoCamion + "]";
     }
 
 }

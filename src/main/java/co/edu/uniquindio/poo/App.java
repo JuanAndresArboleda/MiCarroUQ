@@ -12,6 +12,10 @@ import java.util.Stack;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Consesionario;
 import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.Estado;
+import co.edu.uniquindio.poo.model.Vehiculo;
+import co.edu.uniquindio.poo.model.PickUpElectrico;
+import co.edu.uniquindio.poo.model.Transmision;
 import co.edu.uniquindio.poo.viewController.GestionAlquilerViewController;
 import co.edu.uniquindio.poo.viewController.ClienteViewController;
 import co.edu.uniquindio.poo.viewController.EmpleadoViewController;
@@ -313,6 +317,11 @@ public class App extends Application {
         consesionario.agregarEmpleado(empleado2);
         Empleado empleado3 = new Empleado("Jonathan", 12310, 34192, "jonathan@gmail.com");
         consesionario.agregarEmpleado(empleado3);
+
+
+        Vehiculo vehiculo1 = new PickUpElectrico("Toyota", Estado.NUEVO, 2015, 3, 200, 100,
+        Transmision.AUTOMATICA, "JKL123", 122, "10","20", true, true, 4, 4, true, true, true);
+        consesionario.agregarVehiculo(vehiculo1);
     }
 
 }

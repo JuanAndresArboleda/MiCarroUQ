@@ -2,9 +2,15 @@ package co.edu.uniquindio.poo.viewController;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.GestionVhController;
+import co.edu.uniquindio.poo.model.CamionElectrico;
+import co.edu.uniquindio.poo.model.CamionetaElectrica;
 import co.edu.uniquindio.poo.model.Estado;
+import co.edu.uniquindio.poo.model.MotoElectrica;
 import co.edu.uniquindio.poo.model.PickUpElectrico;
+import co.edu.uniquindio.poo.model.SedanCombustible;
 import co.edu.uniquindio.poo.model.Transmision;
+import co.edu.uniquindio.poo.model.Uso;
+import co.edu.uniquindio.poo.model.VanElectrica;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -27,28 +33,13 @@ public class GestionVhViewController {
     private TableColumn<Vehiculo, String> tbc_cilindraje;
 
     @FXML
-    private TableColumn<Vehiculo, String> tbc_capacidadCarga;
-
-    @FXML
-    private TableColumn<Vehiculo, String> tbc_capacidadBateria;
-
-    @FXML
     private TableColumn<Vehiculo, String> tbc_estado;
 
     @FXML
     private TableColumn<Vehiculo, String> tbc_velocidadMax;
 
     @FXML
-    private TableColumn<Vehiculo, String> tbc_numeroPasajeros;
-
-    @FXML
     private Text txt_tucarro;
-
-    @FXML
-    private TableColumn<Vehiculo, String> tbc_autonomia;
-
-    @FXML
-    private TableColumn<Vehiculo, String> tbc_tiempoCarga;
 
     @FXML
     private TableColumn<Vehiculo, String> tbc_cambios;
@@ -59,7 +50,7 @@ public class GestionVhViewController {
     @FXML
     private TableColumn<Vehiculo, String> tbc_tipoVehiculo;
     @FXML
-    private TextField txf_estado;
+    private ComboBox<Estado> txf_estado;
     @FXML
     private Button btn_actualizarVehiculo;
     @FXML
@@ -99,15 +90,61 @@ public class GestionVhViewController {
     @FXML
     private TextField txf_cilindraje;
     @FXML
-    private TextField txf_transmision;
-    @FXML
-    private VBox additionalFields;
+    private ComboBox<Transmision> txf_transmision;
 
     @FXML
-    private TextField numeroPuertasField, numeroPasajerosField, capacidadCargaField, tiempodeCargaField,
-            autonomiaCargaCompletaField;
+    void onVolver(ActionEvent event) {
+        app.volver();
+    }
+
     @FXML
-    private CheckBox aireAcondicionadoCheckBox, AbsCheckBox, camaraReversaCheckBox, bolsasAireCheckBox, cuatroxcuatroCheckBox;
+    void onAgregarVehiculo(ActionEvent event) {
+        agregarVehiculo();
+    }
+
+    @FXML
+    void onEliminarVehiculo(ActionEvent event) {
+        eliminarVehiculo();
+    }
+
+    @FXML
+    void onActualizarVehiculo(ActionEvent event) {
+        actualizarVehiculo();
+    }
+
+    @FXML
+    private ComboBox<Uso> txf_uso;
+
+    @FXML
+    private VBox PickupField1;
+    @FXML
+    private VBox PickupField2;
+    @FXML
+    private VBox PickupField3;
+    @FXML
+    private VBox PickupField4;
+    @FXML
+    private VBox PickupField5;
+    @FXML
+    private VBox PickupField6;
+    @FXML
+    private VBox PickupField7;
+    @FXML
+    private VBox PickupField8;
+    @FXML
+    private VBox PickupField9;
+    @FXML
+    private VBox PickupField10;
+    @FXML
+    private VBox PickupField11;
+    @FXML
+    private VBox PickupField12;
+    @FXML
+    private TextField numeroPuertasField, numeroPasajerosField, capacidadCargaField, tiempodeCargaField,
+            autonomiaCargaCompletaField, numeroEjesField, tipoCamionField;
+    @FXML
+    private CheckBox aireAcondicionadoCheckBox, AbsCheckBox, camaraReversaCheckBox, bolsasAireCheckBox,
+            cuatroxcuatroCheckBox, frenosAireCheckBox;
 
     App app;
 
@@ -124,10 +161,21 @@ public class GestionVhViewController {
     public void initialize() {
         gestionVhController = new GestionVhController(app.consesionario);
 
-        // Opciones del ComboBox "Tipo Vehículo"
+        txf_uso.getItems().addAll(
+                Uso.PRIVADO,
+                Uso.PROFESIONAL);
+
+        txf_transmision.getItems().addAll(
+                Transmision.AUTOMATICA,
+                Transmision.MANUAL);
+
+        txf_estado.getItems().addAll(
+                Estado.NUEVO,
+                Estado.USADO);
+
         cbox_tipoVehiculo.getItems().addAll(
                 "PickUp Electrico",
-                "Camión Electrico",
+                "Camion Electrico",
                 "Camioneta Electrica",
                 "Van Electrica",
                 "Moto Electrica",
@@ -135,7 +183,7 @@ public class GestionVhViewController {
                 "Deportivo Electrico",
                 "Sedan Electrico",
                 "PickUp Hibrido",
-                "Camión Hibrido",
+                "Camion Hibrido",
                 "Camioneta Hibrida",
                 "Van Hibrida",
                 "Moto Hibrida",
@@ -143,7 +191,7 @@ public class GestionVhViewController {
                 "Deportivo Hibrido",
                 "Sedan Hibrido",
                 "PickUp a Combustible",
-                "Camión a Combustible",
+                "Camion a Combustible",
                 "Camioneta a Combustible",
                 "Van a Combustible",
                 "Moto a Combustible",
@@ -151,13 +199,56 @@ public class GestionVhViewController {
                 "Deportivo a Combustible",
                 "Sedan a Combustible");
 
-        // Valor por defecto
         cbox_tipoVehiculo.setValue("Tipo De Vehiculo");
+
+        // Establecer los textos de sugerencia
+        txf_estado.setPromptText("Estado");
+        txf_transmision.setPromptText("Transmision");
 
         // Actualizar campos adicionales según el tipo de vehículo seleccionado
         cbox_tipoVehiculo.setOnAction(event -> actualizarCamposAdicionales());
 
         initView();
+    }
+
+    private void actualizarCamposAdicionales() {
+        String tipoSeleccionado = cbox_tipoVehiculo.getValue();
+        boolean esPickUpElectrico = "PickUp Electrico".equals(tipoSeleccionado);
+        boolean esCamionElectrico = "Camion Electrico".equals(tipoSeleccionado);
+        boolean esCamionetaElectrica = "Camioneta Electrica".equals(tipoSeleccionado);
+        boolean esVanElectrica = "Van Electrica".equals(tipoSeleccionado);
+        boolean esMotoElectrica = "Moto Electrica".equals(tipoSeleccionado);
+        boolean esBusElectrico = "Bus Electrico".equals(tipoSeleccionado);
+        boolean esDeportivoElectrico = "Deportivo Electrico".equals(tipoSeleccionado);
+        boolean esSedanElectrico = "Sedan Electrico".equals(tipoSeleccionado);
+        boolean esPickUpHibrido = "PickUp Hibrido".equals(tipoSeleccionado);
+        boolean esCamionHibrido = "Camion Hibrido".equals(tipoSeleccionado);
+        boolean esCamionetaHibrido = "Camioneta Hibrida".equals(tipoSeleccionado);
+        boolean esVanHibrido = "Van Hibrida".equals(tipoSeleccionado);
+        boolean esMotoHibrido = "Moto Hibrida".equals(tipoSeleccionado);
+        boolean esBusHibrido = "Bus Hibrido".equals(tipoSeleccionado);
+        boolean esDeportivoHibrido = "Deportivo Hibrido".equals(tipoSeleccionado);
+        boolean esSedanHibrido = "Sedan Hibrido".equals(tipoSeleccionado);
+        boolean esPickUpaCombustible = "PickUp a Combustible".equals(tipoSeleccionado);
+        boolean esCamionaCombustible = "Camion a Combustible".equals(tipoSeleccionado);
+        boolean esCamionetaaCombustible = "Camioneta a Combustible".equals(tipoSeleccionado);
+        boolean esVanaCombustible = "Van a Combustible".equals(tipoSeleccionado);
+        boolean esMotoaCombustible = "Moto a Combustible".equals(tipoSeleccionado);
+        boolean esBusaCombustible = "Bus a Combustible".equals(tipoSeleccionado);
+        boolean esDeportivoaCombustible = "Deportivo a Combustible".equals(tipoSeleccionado);
+        boolean esSedanaCombustible = "Sedan a Combustible".equals(tipoSeleccionado);
+        PickupField1.setVisible(esPickUpElectrico);
+        PickupField2.setVisible(esPickUpElectrico);
+        PickupField3.setVisible(esPickUpElectrico);
+        PickupField4.setVisible(esPickUpElectrico);
+        PickupField5.setVisible(esPickUpElectrico || esCamionElectrico);
+        PickupField6.setVisible(esPickUpElectrico);
+        PickupField7.setVisible(esPickUpElectrico);
+        PickupField8.setVisible(esPickUpElectrico || esCamionElectrico);
+        PickupField9.setVisible(esCamionElectrico);
+        PickupField10.setVisible(esCamionElectrico);
+        PickupField11.setVisible(esCamionElectrico);
+        PickupField12.setVisible(esCamionElectrico);
     }
 
     private void initView() {
@@ -168,7 +259,7 @@ public class GestionVhViewController {
         obtenerVehiculos();
 
         // Agregar los elementos a la tabla
-        //tb_listVehiculos.setItems(listVehiculos);
+        tb_listVehiculos.setItems(listVehiculos);
 
         // Seleccionar elemento de la tabla
         listenerSelection();
@@ -177,13 +268,19 @@ public class GestionVhViewController {
     private void initDataBinding() {
         // Configurar las columnas
         tbc_marca.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMarca()));
-        tbc_modelo.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getModelo())));
+        tbc_modelo.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getModelo())));
         tbc_matricula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMatricula()));
-        tbc_estado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstado().toString()));
-        tbc_cambios.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getCambios())));
-        tbc_velocidadMax.setCellValueFactory(cellData -> new SimpleStringProperty(String.format("%.2f", cellData.getValue().getVelocidadmaxima())));
-        tbc_cilindraje.setCellValueFactory(cellData -> new SimpleStringProperty(String.format("%.2f", cellData.getValue().getCilindraje())));
-        tbc_transmision.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTransmision().toString()));
+        tbc_estado
+                .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstado().toString()));
+        tbc_cambios.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getCambios())));
+        tbc_velocidadMax.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.format("%.2f", cellData.getValue().getVelocidadmaxima())));
+        tbc_cilindraje.setCellValueFactory(
+                cellData -> new SimpleStringProperty(String.format("%.2f", cellData.getValue().getCilindraje())));
+        tbc_transmision.setCellValueFactory(
+                cellData -> new SimpleStringProperty(cellData.getValue().getTransmision().toString()));
     }
 
     private void obtenerVehiculos() {
@@ -202,10 +299,12 @@ public class GestionVhViewController {
             txf_marca.setText(vehiculo.getMarca());
             txf_modelo.setText(Integer.toString(vehiculo.getModelo()));
             txf_matricula.setText(vehiculo.getMatricula());
-            txf_estado.setText(vehiculo.getEstado().toString()); // Suponiendo que Estado tiene un método toString que lo convierte a String
+            txf_estado.setValue(vehiculo.getEstado());
             txf_velocidadMaxima.setText(String.format("%.2f", vehiculo.getVelocidadmaxima()));
             txf_cilindraje.setText(String.format("%.2f", vehiculo.getCilindraje()));
-            txf_transmision.setText(vehiculo.getTransmision().toString()); // Suponiendo que Transmision tiene un método toString
+            txf_transmision.setValue(vehiculo.getTransmision());
+
+            txf_cambios.setText(Integer.toString(vehiculo.getCambios()));
         }
     }
 
@@ -213,11 +312,11 @@ public class GestionVhViewController {
         try {
             String marca = txf_marca.getText();
             int modelo = Integer.parseInt(txf_modelo.getText());
-            Estado estado = Estado.valueOf(txf_estado.getText().toUpperCase());
+            Estado estado = Estado.valueOf(txf_estado.getPromptText().toUpperCase());
             int cambios = Integer.parseInt(txf_cambios.getText());
             double velocidadmaxima = Double.parseDouble(txf_velocidadMaxima.getText());
             double cilindraje = Double.parseDouble(txf_cilindraje.getText());
-            Transmision transmision = Transmision.valueOf(txf_transmision.getText().toUpperCase());
+            Transmision transmision = Transmision.valueOf(txf_transmision.getPromptText().toUpperCase());
             String matricula = txf_matricula.getText();
 
             String tipoSeleccionado = cbox_tipoVehiculo.getValue();
@@ -239,37 +338,116 @@ public class GestionVhViewController {
                         transmision, matricula, autonomiaCargaCompleta, tiempoDeCarga, String.valueOf(capacidadCarga),
                         aireAcondicionado, abs, numeroPasajeros, numeroPuertas, camaraReversa, bolsasAire,
                         cuatroxcuatro);
-            }
 
-            gestionVhController.crearVehiculo(vehiculo);
-            obtenerVehiculos(); // Para refrescar la tabla
-        } catch (Exception e) {
-            System.out.println("Error al crear el vehículo: " + e.getMessage());
-        }
+            }else if (tipoSeleccionado.equals("Camion Electrico")) {
+                String capacidadCarga = capacidadCargaField.getText();
+                boolean aireAcondicionado = aireAcondicionadoCheckBox.isSelected();
+                boolean abs = AbsCheckBox.isSelected();
+                boolean frenosAire = frenosAireCheckBox.isSelected();
+                String numeroEjes = numeroEjesField.getText();    
+                String tipoCamion = tipoCamionField.getText();
+                Uso uso = Uso.valueOf(txf_uso.getPromptText().toUpperCase());
+                int autonomiacargacompleta= Integer.parseInt(autonomiaCargaCompletaField.getText());
+                String tiempodecarga = tiempodeCargaField.getText();
+
+                vehiculo = new CamionElectrico(marca, estado, modelo, cambios, velocidadmaxima, cilindraje,
+                    transmision, matricula, autonomiacargacompleta,tiempodecarga, capacidadCarga, aireAcondicionado, abs, frenosAire, numeroEjes, tipoCamion, uso);
+                    
+            } else if (tipoSeleccionado.equals("Camioneta Electrica")){
+                /**
+                int capacidadCarga = Integer.parseInt(capacidadCargaField.getText());
+                boolean aireAcondicionado = aireAcondicionadoCheckBox.isSelected();
+                boolean abs = AbsCheckBox.isSelected();
+                int numeroPasajeros = Integer.parseInt(numeroPasajerosField.getText());
+                int numeroPuertas = Integer.parseInt(numeroPuertasField.getText());
+                boolean camaraReversa = camaraReversaCheckBox.isSelected();
+                boolean bolsasAire = bolsasAireCheckBox.isSelected();
+                boolean cuatroxcuatro = cuatroxcuatroCheckBox.isSelected();
+                int autonomiaCargaCompleta = Integer.parseInt(autonomiaCargaCompletaField.getText());
+                String tiempoDeCarga = tiempodeCargaField.getText();
+
+                vehiculo = new CamionetaElectrica(marca, estado, modelo, cambios, velocidadmaxima, cilindraje,
+                transmision, matricula, autonomiaCargaCompleta, tiempoDeCarga, velocidadCrucero, capacidadCarga, aireAcondicionado, abs, 
+                numeroPasajeros, numeroPuertas, camaraReversa, bolsasAire, cuatroxcuatro);
+                */
+            } else if (tipoSeleccionado.equals("Van Electrica")) {
+
+            }else if(tipoSeleccionado.equals("Bus Electrica")){
+
+            }else if(tipoSeleccionado.equals("Deportivo Electrico")){
+
+            }else if(tipoSeleccionado.equals("Sedan Electrico")){
+
+            }else if(tipoSeleccionado.equals("PickUp Hibrido")){
+
+            }else if(tipoSeleccionado.equals("Camion Hibrido")){
+
+            }else if(tipoSeleccionado.equals("Camioneta Hibrida")){
+
+             }else if(tipoSeleccionado.equals("Van Hibrida"))
+             {
+
+             }else if(tipoSeleccionado.equals("Moto Hibrida"))
+             {
+
+             }else if(tipoSeleccionado.equals("Bus Hibrido"))
+             {
+
+             }else if(tipoSeleccionado.equals("Deportivo Hibrido"))
+             {
+
+             }else if(tipoSeleccionado.equals("Sedan Hibrido"))
+             {
+
+             }else if(tipoSeleccionado.equals("PickUp a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Camion a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Camioneta a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Van a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Moto a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Bus a Combustible"))
+             {
+
+             }else if(tipoSeleccionado.equals("Deportivo a Combustible"))
+             {
+
+             }else if (tipoSeleccionado.equals("Sedan Combustible")) {
+                         
     }
 
-    private void actualizarCamposAdicionales() {
-        String tipoSeleccionado = cbox_tipoVehiculo.getValue();
 
-        // Mostrar/ocultar campos dependiendo del tipo de vehículo
-        additionalFields.setVisible(tipoSeleccionado.contains("Electrico") || tipoSeleccionado.contains("Hibrido"));
+    gestionVhController.crearVehiculo(vehiculo);
+
+    obtenerVehiculos(); // Para refrescar la tabla
+    }catch(
+
+    Exception e)
+    {
+        System.out.println("Error al crear el vehículo: " + e.getMessage());
+    }
     }
 
-    @FXML
-    public void agregarVehiculo() {
+    private void agregarVehiculo() {
         crearVehiculo();
     }
 
-    @FXML
-    public void eliminarVehiculo() {
+    private void eliminarVehiculo() {
         if (selectedVehiculo != null) {
             gestionVhController.eliminarVehiculo(selectedVehiculo.getMatricula());
             obtenerVehiculos();
         }
     }
 
-    @FXML
-    public void actualizarVehiculo() {
+    private void actualizarVehiculo() {
         if (selectedVehiculo != null) {
             crearVehiculo(); // Para actualizar los valores
             obtenerVehiculos();

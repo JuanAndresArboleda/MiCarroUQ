@@ -1,8 +1,11 @@
 package co.edu.uniquindio.poo.viewController;
 
 import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.Consesionario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -31,6 +34,13 @@ public class IniciarEmpleadoViewController {
     @FXML
     private Text txt_administrador;
 
+    App app;
+    Consesionario consesionario;
+
+    public void setApp(App app) {
+        this.app = app;
+    }
+
     @FXML
     void onIngresar(ActionEvent event) {
         app.openEmpleado();
@@ -41,10 +51,39 @@ public class IniciarEmpleadoViewController {
         app.openUsuarios();
     }
 
-    App app;
+    public void verificarEmpleado() {
+        String cedulaText = txf_cedula.getText().trim();
+        String nombreIngresado = txf_nombre.getText().trim();
 
-    public void setApp(App app) {
-        this.app = app;
+        int cedulaIngresada = Integer.parseInt(cedulaText);
+
+        if (cedulaText.isEmpty() || nombreIngresado.isEmpty()) {
+            mostrarAlerta("La datos no pueden estar vacios.");
+            return;
+        } else {
+            for (Empleado empleado : consesionario.getEmpleados()) {
+                if (cedulaIngresada == empleado.getId() && nombreIngresado.equals(empleado.getNombre())) {
+                    app.openEmpleado();
+                    break;
+                } else {
+                    mostrarAlerta("Cédula o nombre incorrectos.");
+                    limpiarCampos();
+                }
+            }
+        }
     }
 
+    private void mostrarAlerta(String mensaje) {
+        // Crear y mostrar una alerta de error o advertencia
+        Alert alerta = new Alert(Alert.AlertType.WARNING);
+        alerta.setTitle("Advertencia");
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
+    private void limpiarCampos() {
+        txf_cedula.clear();
+        txf_nombre.clear();
+    }
 }

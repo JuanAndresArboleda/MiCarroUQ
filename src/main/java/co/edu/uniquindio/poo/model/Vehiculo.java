@@ -22,8 +22,6 @@ public class Vehiculo {
         this.matricula = matricula;
     }
 
-    
-
     public String getMarca() {
         return marca;
     }

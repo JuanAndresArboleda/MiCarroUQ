@@ -11,98 +11,146 @@
     <content>
         <AnchorPane style="-fx-background-color: white;">
             <children>
-            <SubScene fx:id="ssc_fondo11" height="563.0" layoutX="27.0" layoutY="504.0" width="1475.0">
-               <root>
-                  <Region />
-               </root>
-            </SubScene>
-            <SubScene fx:id="ssc_fondo1" height="468.0" layoutX="25.0" layoutY="23.0" width="1478.0">
-               <root>
-                  <Region />
-               </root>
-            </SubScene>
+                <SubScene fx:id="ssc_fondo11" height="586.0" layoutX="27.0" layoutY="481.0" width="1475.0">
+                    <root>
+                        <Region />
+                    </root>
+                </SubScene>
+                <SubScene fx:id="ssc_fondo1" height="442.0" layoutX="25.0" layoutY="23.0" width="1478.0">
+                    <root>
+                        <Region />
+                    </root>
+                </SubScene>
                 <Text fx:id="txt_gestionVh" fill="#ffc300" layoutX="75.0" layoutY="130.0" text="Gestion Vehiculos">
                     <font>
                         <Font name="Bauhaus 93" size="33.0" />
                     </font>
                 </Text>
-                <TableView fx:id="tb_listVehiculos" layoutX="41.0" layoutY="555.0" prefHeight="287.0" prefWidth="1421.0">
-                <columns>
-                <TableColumn fx:id="tbc_tipoVehiculo" prefWidth="112.0" text="Tipo Vehículo" />
-                <TableColumn fx:id="tbc_capacidadBateria" text="Capacidad Batería (kWh)" visible="false" />
-                <TableColumn fx:id="tbc_autonomia" text="Autonomía (km)" visible="false" />
-                <TableColumn fx:id="tbc_numeroPasajeros" text="Número Pasajeros" visible="false" />
-                <TableColumn fx:id="tbc_capacidadCarga" text="Capacidad Carga" visible="false" />
-                <TableColumn fx:id="tbc_tiempoCarga" text="Tiempo de Carga" visible="false" />
-                <TableColumn fx:id="tbc_marca" prefWidth="114.0" text="Marca" />
-                  <TableColumn fx:id="tbc_estado" prefWidth="84.0" text="Estado" />
-                <TableColumn fx:id="tbc_modelo" prefWidth="72.0" text="Modelo" />
-                  <TableColumn fx:id="tbc_cambios" prefWidth="77.0" text="Cambios" />
-                  <TableColumn fx:id="tbc_velocidadMax" prefWidth="125.0" text="Velocidad Max" />
-                  <TableColumn fx:id="tbc_cilindraje" prefWidth="85.0" text="Cilindraje" />
-                  <TableColumn fx:id="tbc_transmision" prefWidth="109.0" text="Transmision" />
-                <TableColumn fx:id="tbc_matricula" prefWidth="88.0" text="Matricula" />
-                <TableColumn fx:id="tbc_disponible" prefWidth="111.0" text="Disponible" />
-                </columns>
+                <TableView fx:id="tb_listVehiculos" layoutX="72.0" layoutY="546.0" prefHeight="296.0" prefWidth="1390.0">
+                    <columns>
+                        <TableColumn fx:id="tbc_tipoVehiculo" prefWidth="159.0" text="Tipo Vehículo" />
+                        <TableColumn fx:id="tbc_marca" prefWidth="141.0" text="Marca" />
+                        <TableColumn fx:id="tbc_estado" prefWidth="138.0" text="Estado" />
+                        <TableColumn fx:id="tbc_modelo" prefWidth="129.0" text="Modelo" />
+                        <TableColumn fx:id="tbc_cambios" prefWidth="136.0" text="Cambios" />
+                        <TableColumn fx:id="tbc_velocidadMax" prefWidth="155.0" text="Velocidad Max" />
+                        <TableColumn fx:id="tbc_cilindraje" prefWidth="131.0" text="Cilindraje" />
+                        <TableColumn fx:id="tbc_transmision" prefWidth="136.0" text="Transmision" />
+                        <TableColumn fx:id="tbc_matricula" prefWidth="138.0" text="Matricula" />
+                        <TableColumn fx:id="tbc_disponible" prefWidth="126.0" text="Disponible" />
+                    </columns>
                 </TableView>
-                <Button fx:id="btn_volver" layoutX="40.0" layoutY="868.0" onAction="#onVolver" prefHeight="42.0" prefWidth="219.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="17.0" />
-               </font></Button>
+                <Button fx:id="btn_volver" layoutX="72.0" layoutY="868.0" onAction="#onVolver" prefHeight="42.0" prefWidth="219.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="17.0" />
+                    </font>
+                </Button>
 
-                <TextField fx:id="txf_marca" layoutX="75.0" layoutY="177.0" prefWidth="275.0" promptText="Marca" />
-                <TextField fx:id="txf_estado" layoutX="75.0" layoutY="251.0" prefWidth="275.0" promptText="Estado" />
-                <TextField fx:id="txf_cilindraje" layoutX="387.0" layoutY="251.0" prefWidth="275.0" promptText="Cilindraje" />
-                <TextField fx:id="txf_velocidadMaxima" layoutX="387.0" layoutY="177.0" prefWidth="275.0" promptText="Velocidad Máxima" />
-                <TextField fx:id="txf_transmision" layoutX="388.0" layoutY="320.0" prefWidth="275.0" promptText="Transmisión" />
-                <TextField fx:id="txf_matricula" layoutX="388.0" layoutY="394.0" prefWidth="275.0" promptText="Matrícula" />
-                <TextField fx:id="txf_cambios" layoutX="76.0" layoutY="394.0" prefWidth="275.0" promptText="Cambios" />
-                <TextField fx:id="txf_modelo" layoutX="76.0" layoutY="320.0" prefWidth="275.0" promptText="Modelo" />
+                <TextField fx:id="txf_marca" layoutX="75.0" layoutY="177.0" prefHeight="38.0" prefWidth="190.0" promptText="Marca" />
+                <TextField fx:id="txf_cilindraje" layoutX="304.0" layoutY="251.0" prefHeight="38.0" prefWidth="190.0" promptText="Cilindraje" />
+                <TextField fx:id="txf_velocidadMaxima" layoutX="304.0" layoutY="177.0" prefHeight="38.0" prefWidth="190.0" promptText="Velocidad Máxima" />
+                <TextField fx:id="txf_matricula" layoutX="304.0" layoutY="320.0" prefHeight="38.0" prefWidth="190.0" promptText="Matrícula" />
+                <TextField fx:id="txf_cambios" layoutX="75.0" layoutY="251.0" prefHeight="38.0" prefWidth="190.0" promptText="Cambios" />
+                <TextField fx:id="txf_modelo" layoutX="75.0" layoutY="320.0" prefHeight="38.0" prefWidth="190.0" promptText="Modelo" />
 
-                <TextField fx:id="numeroPuertasField" layoutX="700.0" layoutY="177.0" prefWidth="275.0" promptText="Número de Puertas" visible="false" />
-                <TextField fx:id="numeroPasajerosField" layoutX="1000.0" layoutY="177.0" prefWidth="275.0" promptText="Número de Pasajeros" visible="false" />
-                <TextField fx:id="capacidadCargaField" layoutX="700.0" layoutY="251.0" prefWidth="275.0" promptText="Capacidad de Carga" visible="false" />
-                <TextField fx:id="autonomiaCargaCompletaField" layoutX="1000.0" layoutY="251.0" prefWidth="275.0" promptText="Autonomía Carga Completa" visible="false" />
-                <TextField fx:id="tiempodeCargaField" layoutX="700.0" layoutY="320.0" prefWidth="275.0" promptText="Tiempo de Carga" visible="false" />
-
-                <CheckBox fx:id="aireAcondicionadoCheckBox" layoutX="700.0" layoutY="394.0" text="Aire Acondicionado" visible="false" />
-                <CheckBox fx:id="AbsCheckBox" layoutX="700.0" layoutY="430.0" text="ABS" visible="false" />
-                <CheckBox fx:id="camaraReversaCheckBox" layoutX="1000.0" layoutY="394.0" text="Cámara Reversa" visible="false" />
-                <CheckBox fx:id="bolsasAireCheckBox" layoutX="1000.0" layoutY="320.0" text="Bolsas de Aire" visible="false" />
-                <CheckBox fx:id="cuatroxcuatroCheckBox" layoutX="1000.0" layoutY="430.0" text="4x4" visible="false" />
-
-                <ComboBox fx:id="cbox_tipoVehiculo" layoutX="700.0" layoutY="100.0" prefWidth="274.0" />
+                <ComboBox fx:id="cbox_tipoVehiculo" layoutX="538.0" layoutY="105.0" prefHeight="38.0" prefWidth="204.0" visible="false" />
 
                 <ImageView fx:id="img_carro" fitHeight="219.0" fitWidth="276.0" layoutX="1238.0" layoutY="-9.0">
                     <image>
                         <Image url="@LOGO.png" />
                     </image>
                 </ImageView>
-            <Text fx:id="txt_tucarro" fill="#219c90" layoutX="653.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MiCarroUQ" textAlignment="CENTER" wrappingWidth="274.92919921875">
-               <font>
-                  <Font name="Bauhaus 93" size="33.0" />
-               </font>
-            </Text>
-            <Text fx:id="txt_reservas1" fill="#ffc300" layoutX="26.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehiculos" textAlignment="CENTER" wrappingWidth="224.86474609375">
-               <font>
-                  <Font name="Bauhaus 93" size="33.0" />
-               </font>
-            </Text>
-            <Button id="btn_eliminar" fx:id="btn_eliminar" layoutX="1244.0" layoutY="868.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="42.0" prefWidth="218.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Eliminar" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="17.0" />
-               </font>
-            </Button>
-            <Button id="btn_agregarCl" fx:id="btn_agregaVehiculo" layoutX="1244.0" layoutY="399.0" mnemonicParsing="false" onAction="#onAgregar" prefHeight="42.0" prefWidth="219.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Agregar Vehiculo" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="17.0" />
-               </font>
-            </Button>
-            <Button id="btn_actualizarCl" fx:id="btn_actualizarVehiculo" layoutX="1245.0" layoutY="346.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="42.0" prefWidth="217.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Actualizar Vehiculo" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="17.0" />
-               </font>
-            </Button>
+                <Text fx:id="txt_tucarro" fill="#219c90" layoutX="653.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MiCarroUQ" textAlignment="CENTER" wrappingWidth="274.92919921875">
+                    <font>
+                        <Font name="Bauhaus 93" size="33.0" />
+                    </font>
+                </Text>
+                <Text fx:id="txt_reservas1" fill="#ffc300" layoutX="26.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehiculos" textAlignment="CENTER" wrappingWidth="224.86474609375">
+                    <font>
+                        <Font name="Bauhaus 93" size="33.0" />
+                    </font>
+                </Text>
+                <Button fx:id="btn_eliminar" layoutX="1244.0" layoutY="868.0" mnemonicParsing="false" onAction="#onEliminarVehiculo" prefHeight="42.0" prefWidth="218.0" style="-fx-background-color: #EE4E4E; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Eliminar" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="17.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_agregaVehiculo" layoutX="1244.0" layoutY="386.0" mnemonicParsing="false" onAction="#onAgregarVehiculo" prefHeight="42.0" prefWidth="219.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Agregar Vehiculo" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="17.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_actualizarVehiculo" layoutX="1245.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActualizarVehiculo" prefHeight="42.0" prefWidth="217.0" style="-fx-background-color: #FFC700; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Actualizar Vehiculo" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="17.0" />
+                    </font>
+                </Button>
+
+                <ComboBox fx:id="txf_estado" layoutX="75.0" layoutY="394.0" prefHeight="38.0" prefWidth="190.0" />
+                <ComboBox fx:id="txf_transmision" layoutX="304.0" layoutY="394.0" prefHeight="38.0" prefWidth="190.0" />
+                <VBox fx:id="PickupField1" layoutX="539.0" layoutY="177.0" prefHeight="39.0" prefWidth="204.0" visible="false">
+                    <children>
+                        <TextField fx:id="autonomiaCargaCompletaField" prefHeight="38.0" prefWidth="288.0" promptText="Autonomía Carga Completa" />
+                    </children>
+                </VBox>
+            <VBox fx:id="PickupField2" layoutX="538.0" layoutY="251.0" prefHeight="31.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="tiempodeCargaField" prefHeight="38.0" prefWidth="146.0" promptText="Tiempo de Carga" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField3" layoutX="538.0" layoutY="327.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="numeroPuertasField" prefHeight="38.0" prefWidth="275.0" promptText="Número de Puertas" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField4" layoutX="768.0" layoutY="368.0" prefHeight="86.0" prefWidth="204.0" visible="false">
+               <children>
+                  <CheckBox fx:id="bolsasAireCheckBox" prefHeight="38.0" prefWidth="247.0" text="Bolsas de Aire" />
+                  <CheckBox fx:id="camaraReversaCheckBox" prefHeight="38.0" prefWidth="238.0" text="Cámara Reversa" />
+                  <CheckBox fx:id="cuatroxcuatroCheckBox" prefHeight="38.0" prefWidth="90.0" text="4x4" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField5" layoutX="538.0" layoutY="394.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                        <TextField fx:id="capacidadCargaField" prefHeight="38.0" prefWidth="275.0" promptText="Capacidad de Carga" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField6" layoutX="765.0" layoutY="177.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="numeroPuertasField" prefHeight="38.0" prefWidth="275.0" promptText="Número de Puertas" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField7" layoutX="765.0" layoutY="251.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="numeroPasajerosField" prefHeight="38.0" prefWidth="275.0" promptText="Número de Pasajeros" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField8" layoutX="768.0" layoutY="307.0" prefHeight="63.0" prefWidth="204.0" visible="false">
+               <children>
+                  <CheckBox fx:id="aireAcondicionadoCheckBox" prefHeight="38.0" prefWidth="202.0" text="Aire Acondicionado" />
+                  <CheckBox fx:id="AbsCheckBox" prefHeight="38.0" prefWidth="184.0" text="ABS" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField9" layoutX="539.0" layoutY="177.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="numeroEjesField" prefHeight="38.0" prefWidth="275.0" promptText="Número de Ejes" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField10" layoutX="538.0" layoutY="251.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <TextField fx:id="tipoCamionField" prefHeight="38.0" prefWidth="275.0" promptText="Tipo de Camion" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField11" layoutX="768.0" layoutY="367.0" prefHeight="31.0" prefWidth="201.0">
+               <children>
+                  <CheckBox fx:id="frenosAireCheckBox" prefHeight="38.0" prefWidth="247.0" text="Frenos de Aire" />
+               </children>
+            </VBox>
+            <VBox fx:id="PickupField12" layoutX="538.0" layoutY="327.0" prefHeight="36.0" prefWidth="204.0" visible="false">
+               <children>
+                  <ComboBox fx:id="txf_uso" prefHeight="38.0" prefWidth="208.0" promptText="uso" />
+               </children>
+            </VBox>
             </children>
         </AnchorPane>
     </content>

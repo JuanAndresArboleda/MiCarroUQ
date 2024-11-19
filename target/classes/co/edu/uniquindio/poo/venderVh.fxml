@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap_compraVh" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="893.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.CompraVhViewController">
+   <children>
+      <SubScene height="374.0" layoutX="26.0" layoutY="383.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <SubScene height="359.0" layoutX="26.0" layoutY="11.0" width="844.0">
+         <root>
+            <Region />
+         </root>
+      </SubScene>
+      <Text fill="#ffc700" layoutX="67.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vender mis vehiculos" textAlignment="CENTER" wrappingWidth="309.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <Button id="btn_volver" fx:id="btn_volder" layoutX="79.0" layoutY="702.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #566573; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <Text id="lbl_reserva" fill="#ffc300" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mis Vehiculos" textAlignment="CENTER" wrappingWidth="347.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <TableView id="tb_listClientes" fx:id="tb_listMisVh" layoutX="79.0" layoutY="440.0" prefHeight="242.0" prefWidth="738.0">
+         <columns>
+            <TableColumn id="tbc_correoCl" fx:id="tbc_vehiculo" prefWidth="737.0" text="Vehiculo">
+               <columns>
+                  <TableColumn fx:id="tbc_matricula" prefWidth="251.0" text="Matricula" />
+                  <TableColumn fx:id="tbc_tipo" prefWidth="252.0" text="Tipo" />
+                  <TableColumn fx:id="tbc_modelo" prefWidth="234.0" text="Modelo" />
+               </columns>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Button id="btn_agregarCl" fx:id="btn_vender" layoutX="656.0" layoutY="702.0" mnemonicParsing="false" onAction="#onVender" prefHeight="42.0" prefWidth="161.0" style="-fx-background-color: #219C90; -fx-border-color: black; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5;" text="Vender" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="img_carro" fitHeight="289.0" fitWidth="330.0" layoutX="525.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LOGO.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_tucarro" fill="#219c90" layoutX="309.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MiCarroUQ" textAlignment="CENTER" wrappingWidth="274.92919921875">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+      <TableView id="tb_listClientes" fx:id="tb_listVhalaVenta" layoutX="79.0" layoutY="188.0" prefHeight="168.0" prefWidth="420.0">
+         <columns>
+            <TableColumn id="tbc_correoCl" fx:id="tbc_matricula1" prefWidth="238.0" text="Vehiculo">
+               <columns>
+                  <TableColumn fx:id="tbc_estado1" prefWidth="125.0" text="Matricula" />
+                  <TableColumn prefWidth="136.0" text="Modelo" />
+                  <TableColumn prefWidth="158.0" text="Tipo" />
+               </columns>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Text id="lbl_reserva" fill="#219c90" layoutX="53.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehiculos a la venta" textAlignment="CENTER" wrappingWidth="347.86474609375">
+         <font>
+            <Font name="Bauhaus 93" size="33.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

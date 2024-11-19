@@ -111,7 +111,7 @@
             <Font name="Berlin Sans FB" size="23.0" />
          </font>
       </Text>
-      <Text id="lbl_reserva" fx:id="txt_reservas1" fill="#ffc300" layoutX="299.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVAS" textAlignment="CENTER" wrappingWidth="160.86474609375">
+      <Text id="lbl_reserva" fx:id="txt_reservas1" fill="#ffc300" layoutX="303.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alquileres" textAlignment="CENTER" wrappingWidth="160.86474609375">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>
